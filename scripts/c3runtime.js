@@ -4016,7 +4016,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Arr.Acts.SetSize,
 		C3.Plugins.Sprite.Acts.SetSize,
 		C3.ScriptsInEvents.E_menu_Event2_Act1,
-		C3.Plugins.Browser.Acts.ConsoleLog,
 		C3.Plugins.AJAX.Acts.Request,
 		C3.Plugins.AJAX.Cnds.OnComplete,
 		C3.Plugins.Json.Acts.Parse,
@@ -4030,8 +4029,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.System.Acts.SetLayerVisible,
-		C3.Plugins.AJAX.Acts.Post,
-		C3.Plugins.System.Exps.urlencode
+		C3.Plugins.AJAX.Acts.Post
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4107,7 +4105,7 @@ self.C3_JsPropNameTable = [
 	{id_token: 0},
 	{question_count: 0},
 	{control: 0},
-	{get: 0},
+	{highscore: 0},
 	{bg_save_y: 0}
 ];
 }
@@ -4298,12 +4296,6 @@ self.C3_ExpressionFuncs = [
 		() => 540,
 		() => "result",
 		() => -200,
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			const v1 = p._GetNode(1).GetVar();
-			const v2 = p._GetNode(2).GetVar();
-			return () => ((((((("task_id: " + v0.GetValue()) + "\n") + "subject_id: ") + v1.GetValue()) + "\n") + "id_token: ") + v2.GetValue());
-		},
 		() => "request_questions",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
@@ -4349,9 +4341,8 @@ self.C3_ExpressionFuncs = [
 			return () => ((((("/games/alienshooter/result?task_id=" + v0.GetValue()) + "&subject_id=") + v1.GetValue()) + "&id_token=") + v2.GetValue());
 		},
 		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const v1 = p._GetNode(1).GetVar();
-			return () => f0((v1.GetValue()).toString());
+			const v0 = p._GetNode(0).GetVar();
+			return () => (v0.GetValue()).toString();
 		},
 		() => "POST"
 ];
