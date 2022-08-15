@@ -4309,7 +4309,7 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			const v1 = p._GetNode(1).GetVar();
 			const v2 = p._GetNode(2).GetVar();
-			return () => ((((("/games/alienshooter/data?task_id=" + v0.GetValue()) + "&subject_id=") + v1.GetValue()) + "&token_id=") + v2.GetValue());
+			return () => ((((("/games/alienshooter/data?task_id=" + v0.GetValue()) + "&subject_id=") + v1.GetValue()) + "&id_token=") + v2.GetValue());
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -4318,6 +4318,12 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject("Q");
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
+			const v2 = p._GetNode(2).GetVar();
+			return () => ((((("/games/alienshooter/data?task_id=" + v0.GetValue()) + "&subject_id=") + v1.GetValue()) + "&token_id=") + v2.GetValue());
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -4336,7 +4342,12 @@ self.C3_ExpressionFuncs = [
 		() => "DESKTOP",
 		() => -240,
 		() => "send-data",
-		() => "/games/alienshooter",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
+			const v2 = p._GetNode(2).GetVar();
+			return () => ((((("/games/alienshooter/result?task_id=" + v0.GetValue()) + "&subject_id=") + v1.GetValue()) + "&id_token=") + v2.GetValue());
+		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const v1 = p._GetNode(1).GetVar();
