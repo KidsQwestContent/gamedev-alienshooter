@@ -4029,7 +4029,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.System.Acts.SetLayerVisible,
-		C3.Plugins.AJAX.Acts.Post
+		C3.Plugins.AJAX.Acts.Post,
+		C3.Plugins.System.Exps.urlencode
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4341,8 +4342,9 @@ self.C3_ExpressionFuncs = [
 			return () => ((((("/games/alienshooter/result?task_id=" + v0.GetValue()) + "&subject_id=") + v1.GetValue()) + "&id_token=") + v2.GetValue());
 		},
 		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (v0.GetValue()).toString();
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const v1 = p._GetNode(1).GetVar();
+			return () => f0((v1.GetValue()).toString());
 		},
 		() => "POST"
 ];
